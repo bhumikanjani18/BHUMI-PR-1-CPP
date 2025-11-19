@@ -20,7 +20,7 @@ public:
         sec = sec % 60;
     }
 
-    void gettimeConvt(int h, int m, int s)
+    void gettimeConvt()
     {
         cout << "HH:MM:SS " <<"0"<< hrs << ":" << mins << ":" << sec << "0";
     }
@@ -44,9 +44,10 @@ public:
 
 int main()
 {
+    int hours, mins, sec;
     int choice;
-    cout << "\nPress 1 for converting hours,minutes & seconds to seconds";
-    cout << "\nPress 2 for converting seconds into hours and minutes";
+    cout << "\nPress 1 for converting seconds into hours and minutes";
+    cout << "\nPress 2 for converting hours,minutes & seconds to seconds";
     cout << "\nEnter your choice: ";
     cin >> choice;
 
@@ -54,29 +55,27 @@ int main()
     {
     case 1:
         HourstoSec time;
-
-        int hours, mins, sec;
+        
         cout << "Enter seconds: ";
         cin >> sec;
 
         time.settimeConvt(hours, mins, sec);
-        time.gettimeConvt(hours, mins, sec);
+        time.gettimeConvt();
         break;
     case 2:
 
         HourstoSec seconds;
-        int Hours, Mins, Sec;
 
         cout << "Enter hours: ";
-        cin >> Hours;
+        cin >> hours;
 
         cout << "Enter mins: ";
-        cin >> Mins;
+        cin >> mins;
 
         cout << "Enter sec: ";
-        cin >> Sec;
+        cin >> sec;
 
-        seconds.setsectohrs(Hours, Mins, Sec);
+        seconds.setsectohrs(hours, mins, sec);
         seconds.getsectohrs();
         break;
     default:
